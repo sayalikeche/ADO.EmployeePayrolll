@@ -11,7 +11,7 @@ namespace ADO.Employeee
         public float salary { get; set; }
         public DateTime start { get; set; }
         public char gender { get; set; }
-        public string PhoneNo { get; set; }
+        public int PhoneNo { get; set; }
         public string OfficeAddress { get; set; }
         public string Department { get; set; }
         public double BasicPay { get; set; }
@@ -19,6 +19,6 @@ namespace ADO.Employeee
         public double TaxablePay { get; set; }
         public double IncomeTax { get; set; }
         public double NetPay { get; set; }
-        public int id { get; set; }
+        public int  Dep_id { get; set; }
     }
 }
