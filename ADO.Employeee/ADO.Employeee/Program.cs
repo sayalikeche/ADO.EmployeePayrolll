@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ADO.Employeee;
+
+using System;
 
 namespace ADO.Employeee
 {
@@ -6,7 +8,14 @@ namespace ADO.Employeee
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to ADO.EmployeePayroll");
+            Console.WriteLine("Welcome To Pay Roll Service");
+
+            Connection paysql = new Connection();
+            Model model = new Model();
+
         }
+
     }
 }
+
+
