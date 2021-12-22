@@ -14,6 +14,7 @@ namespace ADO.Employeee
             {
                 Console.WriteLine("Select the number which is to be executed \n 1.ADD \n 2.Delete \n 3.Update  \n 4.View \n 5.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
+                Connection paysql = new Connection();
                 switch (choice)
                 {
                     case 1:
@@ -33,7 +34,7 @@ namespace ADO.Employeee
                         model.NetPay = 80000;
                         model.Dep_id = 09;
 
-                        Connection paysql = new Connection();
+
 
                         var result = paysql.AddEmployee(model);
 
@@ -45,6 +46,13 @@ namespace ADO.Employeee
                         break;
 
                     case 2:
+                        Console.WriteLine("Enter the id To Delete Data");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        paysql.DeleteEmployee(num);
+                        break;
+
+
+                    case 3:
                         flag = false;
                         break;
                 }
@@ -52,5 +60,3 @@ namespace ADO.Employeee
         }
     }
 }
-
-

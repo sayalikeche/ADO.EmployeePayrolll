@@ -125,6 +125,43 @@ namespace ADO.Employeee
                 throw new Exception(e.Message);
             }
         }
+        //To Delete Employee details    
+        public bool DeleteEmployee(int id)
+        {
+            try
+            {
+                Connectionn();
+                SqlCommand com = new SqlCommand("DeletePayrollServices", con);
 
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                con.Close();
+                if (i >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
+        public void Display()
+        {
+            foreach (var item in PayrollList)
+            {
+                Console.WriteLine("\n name \t BasicPay \t \t start \t gender");
+                Console.WriteLine(item.name + "\t" + item.BasicPay + "\t" + item.start + "\t" + item.gender);
+            }
+        }
     }
 }
